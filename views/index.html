@@ -1,10 +1,94 @@
-<html>
+<!DOCTYPE html>
+    <html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
+        <link href="/css/fonts.css" rel="stylesheet">
+        <link href="/css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="/css/theme.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="container">
+           
+            <header>
+                <h1> Welcome to Vale </h1>
+				
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="/login" autocomplete="on" method="post"> 
+                                <h1> Enter </h1> 
+                                <p> 
+                                    <label for="username" class="uname" > Your email or username </label>
+                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd"> Your password </label>
+                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									<label for="loginkeeping">Keep me logged in</label>
+								</p>
+                                <p class="login button"> 
+                                   <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" ></a>
+                                </p>
+                                <p class="login button">
+                                    <input type="submit"  />
+                                </p>
+                                <p class="change_link">
+									New to vale ?
+                                     <a href="#toregister" > 
+                                    <button href="#toregister"  type="button" class="btn btn-sm btn-success"> Become a vale </button>
+                                 </a>
+                                </p>
+                                
+                            </form>
+                        </div>
 
-<body>
+                        <div id="register" class="animate form">
+                            <form  action="/register" autocomplete="on" method="post" > 
+                                <h1> Sign up </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" >Your username</label>
+                                    <input id="usernamesignup" v-model="username" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail"  > Your email</label>
+                                    <input id="emailsignup"  v-model="email" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" >Your password </label>
+                                    <input id="passwordsignup"  v-model="password1" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" >Please confirm your password </label>
+                                    <input id="passwordsignup_confirm"  v-model="password2" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="Sign up"/> 
+								</p>
+                                <p class="change_link">  
+									Already a member ?
+									<a href="#tologin" class="to_register"> Go and log in </a>
+								</p>
+                            </form>
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
 
-Hey ! 
-
-</body>
-
+<script src="/js/jquery.js"></script>
+<script src="/js/vue.js"> </script>
+<script src="/js/valeclient.js"> </script>
+<script src="/js/bootstrap.js"></script>
 
 </html>
