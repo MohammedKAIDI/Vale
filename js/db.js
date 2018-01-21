@@ -8,9 +8,12 @@ let User = new Schema({
     email: String, 
     password: String
 });
-
+let Messages = new Schema({
+    body:String, 
+    datePublish:Date
+});
 let userModel = mongoose.model("users",User);
-
+let msgModel = mongoose.model('messages',Messages);
 module.exports = {
 getUsers :  () => {
         let u = new userModel({name:"Mohammed"}).save(function(error,user){
@@ -46,7 +49,25 @@ login: (userInfo, funk ) => {
                      return funk("ko",null);
         }
     });
+}, 
+registerMessage : (msg, fn ) => {
+    new msgModel({body:msg,datePublish:new Date()}).save(function(ko, ok)  {
+        if(ok) return fn("ok",null);
+        else return fn(null, "ko");
+    });
+},
+getNotes : (result) => {
+    msgModel.find({},function(err, notes){
+        if(notes)
+         return result(notes, err) 
+         else return result(null,"error : impossible to get notes");
+    });
+}, 
+deleteNote : (id, result) => {
+        msgModel.remove({_id:id},function(err, ok){
+            if(ok)
+             return result(ok, err) 
+             else return result(null,"error : impossible to get notes"); 
+})
 }
-
-
 };
