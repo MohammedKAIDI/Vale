@@ -28,11 +28,11 @@ let chatSection = new Vue({
     }, 
     methods : {
         getMeIntoChat : () => {
+            window.location="http://127.0.0.1:9495/views/statistics.html"
             $.ajax({
                 type:"POST", 
                 url:"http://127.0.0.1:9495/chat",
                 success: (res) => {
-                     window.location="http://127.0.0.1:9495/views/chat.html"
                 }
             });
         },
@@ -53,7 +53,7 @@ let chatSection = new Vue({
         }
     }
 });
-chatSection.getlistMessages();
+//chatSection.getlistMessages();
 
     $(document).ready(function()
     {
